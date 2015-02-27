@@ -22,10 +22,14 @@ public class Jimario : MonoBehaviour {
 	private float _actionLengthTick = 0.0f;
 	
 	private bool _isSeeking = false;
+
+	private GameObject[] _waypoints;
+	private int _currentWaypointNumber = 0;
 	
 	
 	// Use this for initialization
 	void Start () {
+		_waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 		_currentSpeed = speed;
 		_currentWayPoint = transform.position;
 		AssignNewWaypoint();
@@ -45,12 +49,34 @@ public class Jimario : MonoBehaviour {
 			_lookAtStart = transform.rotation;
 			transform.rotation = Quaternion.Slerp(_lookAtStart, _lookAtTarget, _time/turnspeed);
 		}
+
+		if((transform.position - _currentWayPoint).magnitude < 3 && (transform.position - _currentWayPoint).magnitude > 1){
+			if(_currentSpeed > _minSpeed){
+				_currentSpeed -= _acceleration * Time.deltaTime;
+			}
+			if((transform.position - _currentWayPoint).magnitude < 2)
+				AssignNewWaypoint();
+		}
+
+		if(!((transform.position - _prevWayPoint).magnitude < 3)){
+			if(_currentSpeed < speed){
+				_currentSpeed += _acceleration * Time.deltaTime;
+			}
+		}
+
+		if((transform.position - _currentWayPoint).magnitude < 1){
+			AssignNewWaypoint();
+		}
+		if(_actionLengthTick > maxActionLength){
+			Debug.Log ("Jimario Timeout");
+			AssignNewWaypoint();
+		}
 		
-		if((transform.position - GameObject.FindGameObjectWithTag("Jimmy").transform.position).magnitude < _seekRange){
+		/*if((transform.position - GameObject.FindGameObjectWithTag("Waypoint").transform.position).magnitude < _seekRange){
 			_isSeeking = true;
 			//Debug.Log("SEEKING Jimmy");
 			AssignNewWaypoint();
-		} else if(_isSeeking & (transform.position - GameObject.FindGameObjectWithTag("Jimmy").transform.position).magnitude > _seekRange) {
+		} else if(_isSeeking & (transform.position - GameObject.FindGameObjectWithTag("Waypoint").transform.position).magnitude > _seekRange) {
 			_isSeeking = false;
 			Debug.Log("Stopped seeking player");
 		}else if(_isSeeking){
@@ -71,19 +97,27 @@ public class Jimario : MonoBehaviour {
 			}
 		}
 		//}
-		
-		if((transform.position - _currentWayPoint).magnitude < 1){
-			AssignNewWaypoint();
-		}
-		if(_actionLengthTick > maxActionLength){
-			AssignNewWaypoint();
-		}
+		*/
 	}
 	
 	void AssignNewWaypoint(){
 		// Set prev waypoint
 		_prevWayPoint = _currentWayPoint;
-		
+		_currentWaypointNumber++;
+		Debug.Log ("current waypoint number: " + _currentWaypointNumber);
+
+		if (_currentWaypointNumber >= _waypoints.Length) {
+			_currentWaypointNumber = 0;
+		}
+
+
+		_currentWayPoint = _waypoints[_currentWaypointNumber].transform.position;
+
+		Vector3 temp = _currentWayPoint - transform.position;
+		temp.y = 0;
+		_lookAtTarget = Quaternion.LookRotation(temp);
+
+		/*
 		// Does nothing except pick a new destination
 		if(!_isSeeking){
 			_currentWayPoint = new Vector3(Random.Range(transform.position.x - range, transform.position.x + range), 1, Random.Range(transform.position.z - range, transform.position.z + range));
@@ -93,12 +127,15 @@ public class Jimario : MonoBehaviour {
 			_lookAtTarget = Quaternion.LookRotation(temp);
 			
 		} else if(_isSeeking){
-			_currentWayPoint = GameObject.FindGameObjectWithTag("Jimmy").transform.position;
+			_currentWayPoint = GameObject.FindGameObjectWithTag("Waypoint").transform.position;
 			
 			Vector3 temp = _currentWayPoint - transform.position;
 			temp.y = 0;
 			_lookAtTarget = Quaternion.LookRotation(temp);
 		}
+		*/
+
+
 		// Dont need to change direction every frame as we walk in a straight line
 		// Reset lookAt animation variables
 		

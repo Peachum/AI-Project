@@ -50,7 +50,7 @@ public class Jimmy : MonoBehaviour {
 			AssignNewWaypoint();
 		} else if(_isFleeing & (transform.position - GameObject.FindGameObjectWithTag("Player").transform.position).magnitude > 25) {
 			_isFleeing = false;
-			Debug.Log("Stopped fleeing");
+			//Debug.Log("Stopped fleeing");
 		}else if(_isFleeing){
 			AssignNewWaypoint();
 		}
@@ -104,6 +104,6 @@ public class Jimmy : MonoBehaviour {
 		_time = 0.0f;
 		_actionLengthTick = 0.0f;
 
-		Debug.Log(_currentWayPoint + " and " + (transform.position - _currentWayPoint));
+		//Debug.Log(_currentWayPoint + " and " + (transform.position - _currentWayPoint));
 	}
 }

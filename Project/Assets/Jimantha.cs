@@ -48,12 +48,12 @@ public class Jimantha : MonoBehaviour {
 		
 		if((transform.position - GameObject.FindGameObjectWithTag("Player").transform.position).magnitude < _seekRange){
 			_isSeeking = true;
-			Debug.Log("SEEKING PLAYER");
+			//Debug.Log("SEEKING PLAYER");
 			AssignNewWaypoint();
 		} else if(_isSeeking & (transform.position - GameObject.FindGameObjectWithTag("Player").transform.position).magnitude > _seekRange) {
 			_isSeeking = false;
 			AssignNewWaypoint();
-			Debug.Log("Stopped seeking player");
+			//Debug.Log("Stopped seeking player");
 		}else if(_isSeeking){
 			AssignNewWaypoint();
 		}
@@ -107,6 +107,6 @@ public class Jimantha : MonoBehaviour {
 		_time = 0.0f;
 		_actionLengthTick = 0.0f;
 		
-		Debug.Log("Jimantha: " + _currentWayPoint + " and " + (transform.position - _currentWayPoint));
+		//Debug.Log("Jimantha: " + _currentWayPoint + " and " + (transform.position - _currentWayPoint));
 	}
 }

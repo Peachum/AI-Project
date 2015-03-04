@@ -68,7 +68,7 @@ public class Jimario : MonoBehaviour {
 			AssignNewWaypoint();
 		}
 		if(_actionLengthTick > maxActionLength){
-			Debug.Log ("Jimario Timeout");
+			//Debug.Log ("Jimario Timeout");
 			AssignNewWaypoint();
 		}
 		
@@ -104,7 +104,7 @@ public class Jimario : MonoBehaviour {
 		// Set prev waypoint
 		_prevWayPoint = _currentWayPoint;
 		_currentWaypointNumber++;
-		Debug.Log ("current waypoint number: " + _currentWaypointNumber);
+		//Debug.Log ("current waypoint number: " + _currentWaypointNumber);
 
 		if (_currentWaypointNumber >= _waypoints.Length) {
 			_currentWaypointNumber = 0;
@@ -143,6 +143,6 @@ public class Jimario : MonoBehaviour {
 		_time = 0.0f;
 		_actionLengthTick = 0.0f;
 		
-		Debug.Log("Jimario: " + _currentWayPoint + " and " + (transform.position - _currentWayPoint));
+		//Debug.Log("Jimario: " + _currentWayPoint + " and " + (transform.position - _currentWayPoint));
 	}
 }

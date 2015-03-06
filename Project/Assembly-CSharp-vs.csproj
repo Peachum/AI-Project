@@ -49,6 +49,9 @@
      <Compile Include="Assets\Jimantha.cs" />
      <Compile Include="Assets\Jimario.cs" />
      <Compile Include="Assets\Jimmy.cs" />
+     <Compile Include="Assets\Scripts\Entity Scripts\Animal.cs" />
+     <Compile Include="Assets\Scripts\Entity Scripts\Monster.cs" />
+     <Compile Include="Assets\Scripts\Entity Scripts\Villager.cs" />
      <Compile Include="Assets\Scripts\Waypoint Scripts\WaypointNode.cs" />
      <Compile Include="Assets\Scripts\Waypoint Scripts\WaypointSystem.cs" />
      <Compile Include="Assets\Scripts\Waypoint Scripts\_Vertex.cs" />
@@ -59,7 +62,7 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/silen_000/Desktop/AI-Project-master/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/silen_000/Documents/GitHub/AI-Project/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>

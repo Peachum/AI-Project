@@ -1,10 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Waypoint Scripts\WaypointNode.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Waypoint Scripts\WaypointSystem.cs">
     <Files>
-      <File FileName="Assets\Scripts\Waypoint Scripts\_Vertex.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Waypoint Scripts\WaypointNode.cs" Line="31" Column="40" />
-      <File FileName="Assets\Scripts\Waypoint Scripts\WaypointSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entity Scripts\Villager.cs" Line="46" Column="32" />
+      <File FileName="Assets\Jimantha.cs" Line="1" Column="1" />
+      <File FileName="Assets\Jimario.cs" Line="1" Column="1" />
+      <File FileName="Assets\Jimmy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entity Scripts\Animal.cs" Line="18" Column="36" />
+      <File FileName="Assets\Scripts\Entity Scripts\Monster.cs" Line="19" Column="2" />
+      <File FileName="Assets\Scripts\Waypoint Scripts\WaypointSystem.cs" Line="150" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

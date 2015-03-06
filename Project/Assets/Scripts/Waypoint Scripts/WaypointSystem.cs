@@ -31,7 +31,7 @@ public class WaypointSystem : MonoBehaviour {
 		} else if(waitTime >= waitMax){
 			waitTime = 0.0F;
 			
-			//testPath = GenPath (_waypoints[0], getRandomWaypoint());
+			testPath = GenPath (_waypoints[0], getRandomWaypoint());
 		}
 
 		if(displayGizmos != currentDisplayGizmos){
